@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import {program} from "commander";
+import responseGenerator from "./gemini.js";
 
 program
     .version("0.0.1")
@@ -14,3 +15,6 @@ program
     })
 
 program.parse(process.argv);
+
+(async()=>console.log(await responseGenerator("Error Message:\n" +
+    "TypeError: Cannot read property 'length' of undefined\n")))()
